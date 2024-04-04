@@ -39,5 +39,5 @@ RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
 EXPOSE 6633 6653 6640
 
-CMD ["bash", "-c", "echo \"Starting up...\" && python -u ${SCRIPTDIR} -D"]
+ENTRYPOINT /ENTRYPOINT.sh
 
