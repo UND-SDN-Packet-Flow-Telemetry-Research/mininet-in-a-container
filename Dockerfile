@@ -28,6 +28,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends python-tk
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 RUN apt-get update && apt-get install -y --no-install-recommends git
+RUN apt-get update && apt-get install -y --no-install-recommends python-pip
+RUN pip install kafka-python
 RUN git clone https://github.com/mininet/mininet.git
 # cambio 2023
 COPY miniedit.py /root/mininet/examples/miniedit.py
@@ -37,4 +39,5 @@ RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
 EXPOSE 6633 6653 6640
 
-ENTRYPOINT ["/ENTRYPOINT.sh"]
+CMD ["bash", "-c", "echo \"Starting up...\" && python -u ${SCRIPTDIR} -D"]
+
