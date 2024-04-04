@@ -1,5 +1,12 @@
 # Mininet in a container
 
+This is a fork of `pmanzoni/mininet-in-a-container`. The intent is to provide
+a containerized mininet that has the added benefit of being headless. Simply
+pass through the environment variable `SCRIPTDIR` to point the Python interpreter
+to where your mininet script is stored.
+
+The remaining README is unedited.
+
 A Docker image for [Mininet](http://mininet.org/), based on this one: https://github.com/iwaseyusuke/docker-mininet.
 
 It works in Linux-based systems (e.g., Ubuntu native or virtual via VirtualBox); it also works with MacOS.
