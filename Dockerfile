@@ -21,15 +21,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xterm \
     wireshark-qt \
     wget \
+    iperf3 \
  && rm -rf /var/lib/apt/lists/* \
  && chmod +x /ENTRYPOINT.sh
 
 RUN apt-get update && apt-get install -y --no-install-recommends python-tk
-
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 RUN apt-get update && apt-get install -y --no-install-recommends git
-RUN apt-get update && apt-get install -y --no-install-recommends python-pip
-RUN pip install kafka-python
+RUN apt-get update && apt-get install -y --no-install-recommends python3-pip
+
 RUN git clone https://github.com/mininet/mininet.git
 # cambio 2023
 COPY miniedit.py /root/mininet/examples/miniedit.py
